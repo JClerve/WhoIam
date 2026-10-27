@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joeson Clerve | Software Engineer & AI Systems</title>
+  <meta name="description" content="Portfolio of Joeson Clerve - Full-Stack Software Engineer & AI Systems Architect. Inspired by nonzerosum design, game theory, and win-win engineering." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+  <a name="top"></a>
+
+  <!-- Top Navigation Pill (exact nonzerosum.games nav) -->
+  <div class="menuColumn">
+    <a class="menu-link" href="#top"><span class="mi-glyph">0</span><span class="mi-word">Home</span></a>
+    <a class="menu-link" href="#projects"><span class="mi-glyph">8</span><span class="mi-word">Projects</span></a>
+    <a class="menu-link" href="#skills"><span class="mi-glyph">*</span><span class="mi-word">Skills</span></a>
+    <a class="menu-link" href="#arcade"><span class="mi-glyph">#</span><span class="mi-word">Arcade</span></a>
+    <a class="menu-link" href="#about"><span class="mi-glyph">.</span><span class="mi-word">About</span></a>
+    <a class="menu-link" href="#contact"><span class="mi-glyph">'</span><span class="mi-word">Contact</span></a>
+
+    <!-- Dark Mode Pill Switch -->
+    <label class="switch" title="Toggle Dark/Light Mode">
+      <input type="checkbox" id="darkModeToggle" aria-label="Toggle dark mode" />
+      <span class="slider round"></span>
+    </label>
+  </div>
+
+  <!-- Hero Section -->
+  <header>
+    <h3 style="margin-bottom: 0px; font-size: 90%;">WELCOME TO THE PORTFOLIO OF</h3>
+    <h1 style="margin-top: 5px; margin-bottom: 3px;">JOESON CLERVE</h1><aside>f</aside>
+    <h2>a <strong>full-stack</strong> engineer &amp; <strong>ai</strong> systems builder</h2>
+
+    <!-- Interactive Hero Canvas (Nodes & Non-Zero-Sum Network) -->
+    <div class="hero-canvas-wrap">
+      <canvas id="heroCanvas"></canvas>
+    </div>
+
+    <p>
+      Hi, I'm <strong>Joeson Clerve</strong>, a software engineer building production-grade full-stack web platforms, agentic AI pipelines, and high-performance backend systems. Like game theory teaches us, great software is <em>non-zero-sum</em>—it creates leverage, connects minds, and multiplies human potential.
+    </p>
+
+    <div>
+      <a href="#projects" class="button">Explore Projects ➔</a>
+      <a href="#arcade" class="button btn-secondary">Play in Arcade 🕹️</a>
+      <a href="https://github.com/JClerve" target="_blank" rel="noopener noreferrer" class="button btn-secondary">GitHub ↗</a>
+    </div>
+  </header>
+
+  <!-- Projects Section -->
+  <a name="projects"></a>
+  <section style="margin-top: 40px;">
+    <h3 style="font-size: 130%;">WHAT'S BUILT</h3>
+    <p>Selected full-stack web platforms, AI systems, and core software engineering solutions:</p>
+
+    <!-- 3-Column Labelled Grid (exact nonzerosum layout) -->
+    <div class="image-grid">
+      <!-- DentAI -->
+      <div class="labelled-col">
+        <h3>... AI HEALTHCARE</h3>
+        <div class="image-item">
+          <a href="#" data-project="dentai">
+            <span class="image-title">
+              DentAI
+              <div class="image-subtitle">intelligent dental diagnostics &amp; clinic suite</div>
+            </span>
+            <img src="images/ai-systems.png" alt="DentAI Platform visual" />
+            <div class="tag-container">
+              <span class="tag">Next.js 15</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">AI Vision</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- AI Engineer Essentials -->
+      <div class="labelled-col">
+        <h3>... AGENTIC AI</h3>
+        <div class="image-item">
+          <a href="#" data-project="aee">
+            <span class="image-title">
+              AI Engineer Essentials
+              <div class="image-subtitle">LangGraph, GraphRAG, MCP &amp; Voice AI</div>
+            </span>
+            <img src="images/mascot.png" alt="AI Agent Visual" />
+            <div class="tag-container">
+              <span class="tag">LangGraph</span>
+              <span class="tag">Multi-Agent</span>
+              <span class="tag">MCP</span>
+              <span class="tag">LiveKit</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- C# .NET Tetris & Banx -->
+      <div class="labelled-col">
+        <h3>... C# .NET SYSTEMS</h3>
+        <div class="image-item">
+          <a href="#" data-project="dotnet">
+            <span class="image-title">
+              Tetris Engine &amp; Banx
+              <div class="image-subtitle">clean architecture game loop &amp; banking solution</div>
+            </span>
+            <img src="images/game-theory.png" alt="Dotnet systems visual" />
+            <div class="tag-container">
+              <span class="tag">C#</span>
+              <span class="tag">.NET Core</span>
+              <span class="tag">Game Loop</span>
+              <span class="tag">OOP</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secondary Row -->
+    <div class="image-grid" style="margin-top: 10px;">
+      <!-- LeetCode 365 -->
+      <div class="image-item">
+        <a href="#" data-project="leetcode">
+          <span class="image-title">
+            LeetCode 365
+            <div class="image-subtitle">daily algorithmic problem solving &amp; DSA mastery</div>
+          </span>
+          <img src="images/algorithms.png" alt="Algorithms Visual" />
+          <div class="tag-container">
+            <span class="tag">Python</span>
+            <span class="tag">DSA</span>
+            <span class="tag">Dynamic Programming</span>
+            <span class="tag">Graphs</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Python Math & Matrix Engine -->
+      <div class="image-item">
+        <a href="#" data-project="python_math">
+          <span class="image-title">
+            Python Computation Engine
+            <div class="image-subtitle">linear algebra, matrix transformations &amp; calculus tools</div>
+          </span>
+          <img src="images/arcade.png" alt="Math Engine visual" />
+          <div class="tag-container">
+            <span class="tag">Python</span>
+            <span class="tag">Linear Algebra</span>
+            <span class="tag">Algorithms</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills & Technologies Matrix -->
+  <a name="skills"></a>
+  <section style="margin-top: 45px;">
+    <h3>TECH STACK &amp; CAPABILITIES</h3>
+    <p>Core technologies, frameworks, and tools I use to build robust software systems:</p>
+
+    <div class="container">
+      <div class="darkColumn">
+        <h3>LANGUAGES</h3>
+        <ul>
+          <li><strong>TypeScript &amp; JavaScript</strong> (ESNext)</li>
+          <li><strong>Python 3</strong> (FastAPI, PyTorch, LangChain)</li>
+          <li><strong>C# &amp; .NET Core</strong></li>
+          <li><strong>SQL &amp; PostgreSQL</strong></li>
+          <li><strong>Bash &amp; Linux Shell</strong></li>
+        </ul>
+      </div>
+
+      <div class="lightColumn">
+        <h3>AI &amp; AGENTIC SYSTEMS</h3>
+        <ul>
+          <li><strong>LangChain &amp; LangGraph</strong> (Orchestration)</li>
+          <li><strong>GraphRAG &amp; Vector Embeddings</strong></li>
+          <li><strong>Model Context Protocol (MCP)</strong></li>
+          <li><strong>Multimodal &amp; Computer Vision</strong></li>
+          <li><strong>LiveKit Real-time Voice AI</strong></li>
+        </ul>
+      </div>
+
+      <div class="darkColumn">
+        <h3>WEB &amp; INFRASTRUCTURE</h3>
+        <ul>
+          <li><strong>Next.js 15 &amp; React 19</strong></li>
+          <li><strong>Tailwind CSS &amp; Modern UI/UX</strong></li>
+          <li><strong>REST &amp; Asynchronous APIs</strong></li>
+          <li><strong>Docker &amp; Containerization</strong></li>
+          <li><strong>Git &amp; CI/CD Pipelines</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Arcade / Interactive Game Theory Lab -->
+  <a name="arcade"></a>
+  <section style="margin-top: 45px;">
+    <h3>THE ARCADE / INTERACTIVE LAB</h3>
+    <h2>Prisoner's Dilemma &amp; Win-Win Game Theory Arena</h2>
+    <p>
+      In honor of <em>non-zero-sum games</em>, test your strategy in this interactive tournament! Experience how cooperation beats exploitation in iterated games.
+    </p>
+
+    <div class="arcade-box">
+      <!-- Payoff Matrix Table -->
+      <table id="payoffTable">
+        <thead>
+          <tr>
+            <th>You \ Bot</th>
+            <th>Cooperate (C)</th>
+            <th>Defect (D)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Cooperate (C)</th>
+            <td id="cell-cc">
+              <div class="matrix-cell">
+                <span class="val">+3, +3</span>
+                <span style="font-size: 70%;">Win-Win</span>
+              </div>
+            </td>
+            <td id="cell-cd">
+              <div class="matrix-cell">
+                <span class="val">0, +5</span>
+                <span style="font-size: 70%;">Exploited</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th>Defect (D)</th>
+            <td id="cell-dc">
+              <div class="matrix-cell">
+                <span class="val">+5, 0</span>
+                <span style="font-size: 70%;">Temptation</span>
+              </div>
+            </td>
+            <td id="cell-dd">
+              <div class="matrix-cell">
+                <span class="val">+1, +1</span>
+                <span style="font-size: 70%;">Lose-Lose</span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Opponent Strategy Selector -->
+      <div style="margin: 15px 0;">
+        <label for="opponentStrategy" style="font-size: 0.95rem; margin-right: 8px;">Opponent Bot:</label>
+        <select id="opponentStrategy" style="font-family: inherit; font-size: 0.95rem; padding: 6px 14px; border-radius: 18px; border: none; background: rgba(255,255,255,0.85); color: #2a243d;">
+          <option value="tit_for_tat">Tit-for-Tat (Cooperative, retaliates only when wronged)</option>
+          <option value="always_cooperate">Always Cooperate (Saint)</option>
+          <option value="always_defect">Always Defect (Hawk)</option>
+          <option value="grim_trigger">Grim Trigger (Cooperates until betrayed once)</option>
+          <option value="random">Random Coin Flip</option>
+        </select>
+      </div>
+
+      <!-- Play Controls -->
+      <div style="margin: 15px 0;">
+        <button id="btnCooperate" style="background-color: #2ecbbe; border-color: rgba(255,255,255,0.7);">🤝 Cooperate</button>
+        <button id="btnDefect" style="background-color: #e06c75; border-color: rgba(255,255,255,0.7);">⚡ Defect</button>
+        <button id="btnResetArcade" class="btn-secondary" style="font-size: 15px;">Reset</button>
+      </div>
+
+      <!-- Scoreboard -->
+      <div style="margin-top: 10px;">
+        <span class="score-badge">Your Score: <span id="playerScore">0</span></span>
+        <span class="score-badge">Bot Score: <span id="botScore">0</span></span>
+      </div>
+
+      <!-- Round Log -->
+      <div id="roundLog" style="margin-top: 15px; max-height: 120px; overflow-y: auto; background: rgba(0,0,0,0.12); border-radius: 18px; padding: 10px;">
+        <em>Choose Cooperate or Defect to begin!</em>
+      </div>
+    </div>
+  </section>
+
+  <!-- About & Philosophy (Accordion) -->
+  <a name="about"></a>
+  <section style="margin-top: 45px;">
+    <h3>ABOUT &amp; ENGINEERING PHILOSOPHY</h3>
+    <p>A peek into my technical background, mindset, and what drives my work:</p>
+
+    <details open>
+      <summary>Why Non-Zero-Sum Software?</summary>
+      <p>
+        Zero-sum thinking assumes that for one entity to gain, another must lose. In computing and software architecture, this manifests as proprietary lock-in, fragmented data silos, and friction. Non-zero-sum engineering focuses on open standards, collaborative workflows, and AI tooling that elevates developer productivity and user autonomy simultaneously.
+      </p>
+    </details>
+
+    <details>
+      <summary>My Background &amp; Focus</summary>
+      <p>
+        I am a versatile software engineer with hands-on experience spanning frontend reactivity, backend microservices, and modern AI engineering. From engineering healthcare platforms like <strong>DentAI</strong> to crafting robust game loops in C# .NET and pushing code daily in LeetCode 365, I obsess over code clarity, testability, and resilient architecture.
+      </p>
+    </details>
+
+    <details>
+      <summary>AI Agent Systems &amp; Context Engineering</summary>
+      <p>
+        In modern systems engineering, LLMs alone are just engines; the differentiator is deterministic workflow control, context engineering, and state management. Through LangGraph, multi-agent evaluation frameworks, and MCP (Model Context Protocol), I design agents that execute complex multi-step reasoning with verifiable correctness.
+      </p>
+    </details>
+  </section>
+
+  <!-- Contact & Newsletter Form (#mc_embed_signup style) -->
+  <a name="contact"></a>
+  <section id="mc_embed_signup">
+    <h3 style="margin-top: 0;">LET'S BUILD TOGETHER</h3>
+    <p>Interested in collaborating, hiring, or discussing intelligent systems? Send a message below:</p>
+
+    <form onsubmit="handleContactSubmit(event)">
+      <input type="text" id="contactName" placeholder="Your Name" required />
+      <input type="email" id="contactEmail" placeholder="Your Email Address" required />
+      <textarea id="contactMessage" rows="3" placeholder="What would you like to build?" required></textarea>
+      <button type="submit" class="button" style="margin-top: 12px;">Send Message 🚀</button>
+    </form>
+    <div id="contactFeedback" style="margin-top: 10px; font-weight: bold; display: none;"></div>
+
+    <div style="margin-top: 20px;">
+      <p style="font-size: 0.95rem;">
+        Or email directly: <a href="mailto:joesonclerve9@gmail.com" style="text-decoration: underline;">joesonclerve9@gmail.com</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="https://github.com/JClerve" target="_blank" rel="noopener noreferrer">GitHub</a> •
+      <a href="mailto:joesonclerve9@gmail.com">Email</a> •
+      <a href="#top">Back to Top ↑</a>
+    </div>
+    <p style="font-size: 85%; margin: 6px 0;">
+      Crafted with the typography, theme, and navigation of <a href="https://nonzerosum.games/" target="_blank" rel="noopener noreferrer">nonzerosum.games</a>.
+    </p>
+    <aside style="font-size: 1.5rem; margin-top: 4px;">A</aside>
+  </footer>
+
+  <!-- Project Details Modal -->
+  <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <h2 id="modalTitle" style="font-size: 1.6rem; margin-bottom: 4px;"></h2>
+      <div id="modalSubtitle" style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 16px;"></div>
+      <p id="modalDesc" style="text-align: left;"></p>
+      <h4 style="text-align: left; margin-top: 14px;">Key Technical Highlights:</h4>
+      <ul id="modalHighlights" style="text-align: left; padding-left: 20px; font-size: 0.92rem; line-height: 1.6;"></ul>
+      <div style="margin-top: 22px;">
+        <a id="modalGithub" href="https://github.com/JClerve" target="_blank" rel="noopener noreferrer" class="button">View Source on GitHub ↗</a>
+        <button id="modalClose" class="button btn-secondary">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('contactName').value;
+      const email = document.getElementById('contactEmail').value;
+      const message = document.getElementById('contactMessage').value;
+      const feedback = document.getElementById('contactFeedback');
+
+      const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+      const body = encodeURIComponent(`From: ${name} (${email})\n\nMessage:\n${message}`);
+      window.location.href = `mailto:joesonclerve9@gmail.com?subject=${subject}&body=${body}`;
+
+      feedback.textContent = `Thanks, ${name}! Your email client will open to send the message.`;
+      feedback.style.display = 'block';
+      feedback.style.color = '#2ecbbe';
+    }
+  </script>
+</body>
+</html>
