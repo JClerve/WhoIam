@@ -7,29 +7,9 @@
   <a class="menu-link" href="index.html#about"><span class="mi-glyph">.</span><span class="mi-word">About</span></a>
   <a class="menu-link" href="index.html#contact"><span class="mi-glyph">'</span><span class="mi-word">Contact</span></a>
 
-  <!-- Dark Mode Pill Switch -->
-  <label class="switch" title="Toggle Dark/Light Mode">
-    <input type="checkbox" id="darkModeToggle" aria-label="Toggle dark mode">
-    <span class="slider round"></span>
-  </label>
 </div>
 
 <script>
-  // Dark mode handler
-  (function initDarkMode() {
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    if (!darkModeToggle) return;
-
-    if (localStorage.getItem('darkMode') === 'enabled') {
-      document.body.classList.add('dark-mode');
-      darkModeToggle.checked = true;
-    }
-
-    darkModeToggle.addEventListener('change', function () {
-      document.body.classList.toggle('dark-mode', darkModeToggle.checked);
-      localStorage.setItem('darkMode', darkModeToggle.checked ? 'enabled' : 'disabled');
-    });
-  })();
 
   // Menu peek breathing animation (from nonzerosum.games)
   (function initMenuPeek() {
