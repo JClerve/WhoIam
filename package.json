@@ -10,7 +10,7 @@
     "serve": "python3 -m http.server 3000"
   },
   "keywords": ["portfolio", "software-engineer", "non-zero-sum", "game-theory", "ai-engineer"],
-  "author": "Joeson Clerve <joesonclerve9@gmail.com>",
+  "author": "Joeson Clerve <clervejoeson@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "vite": "^6.0.0"
