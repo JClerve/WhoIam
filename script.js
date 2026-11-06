@@ -4,19 +4,6 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Initial dark mode sync
-  const darkModeToggle = document.getElementById('darkModeToggle');
-  if (darkModeToggle) {
-    if (localStorage.getItem('darkMode') === 'enabled') {
-      document.body.classList.add('dark-mode');
-      darkModeToggle.checked = true;
-    }
-    darkModeToggle.addEventListener('change', () => {
-      document.body.classList.toggle('dark-mode', darkModeToggle.checked);
-      localStorage.setItem('darkMode', darkModeToggle.checked ? 'enabled' : 'disabled');
-    });
-  }
-
   // 2. Non-Zero-Sum Scroll Scale Effect (from nonzerosum.games)
   window.addEventListener('scroll', () => {
     const windowHeight = window.innerHeight;
