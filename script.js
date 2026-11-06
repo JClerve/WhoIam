@@ -281,63 +281,63 @@ function initGameTheoryArcade() {
 
 /* --- Project Modals --- */
 const projectData = {
-  dentai: {
-    title: 'DentAI - Intelligent Dental Platform',
-    subtitle: 'Next.js 15, React 19, TypeScript, Python FastAPI & Computer Vision',
-    desc: 'Full-stack AI diagnostic and practice management system. Features dental imaging diagnostics, automated patient scheduling, role-based workflows, and real-time report generation using state-of-the-art multimodal AI.',
+  rag: {
+    title: 'Enterprise RAG Assistant',
+    subtitle: 'Python, OpenAI API, LangChain, ChromaDB, FastAPI, Docker',
+    desc: 'RAG-based question answering system for document-level QA over large-scale knowledge bases.',
     highlights: [
-      'Next.js 15 App Router & modern Tailwind UI design system',
-      'Python FastAPI backend with asynchronous diagnostic pipelines',
-      'Secure dental record encryption and HIPAA-compliant data schemas',
-      'Integrated AI models for pathology detection & interactive dental charts'
+      'Ingestion pipeline with preprocessing, chunking, embeddings, and vector indexing',
+      'Semantic search with vector embeddings to improve relevance of retrieved context',
+      'Source-grounded generation to reduce hallucinations and improve LLM reliability',
+      'Scalable REST APIs with FastAPI, containerized with Docker'
+    ],
+    github: 'https://github.com/JClerve/Enterprise-RAG-Assistant'
+  },
+  demopay: {
+    title: 'DemoPAY - Modular Payment Backend',
+    subtitle: 'C#, .NET 10, PostgreSQL, Stripe SDK, Docker, GitHub Actions',
+    desc: 'Locally runnable modular-monolith payment backend with separate Payments, Ledger, and Reconciliation persistence contexts.',
+    highlights: [
+      'Stripe PaymentIntents with authenticated webhook evidence as the authority for completion',
+      'Idempotent ledger operations with balanced, immutable postings',
+      'Durable webhook receipt handling and retryable background workers',
+      'Operator API auth, health/readiness checks, and acceptance tests using the real Stripe SDK'
+    ],
+    github: 'https://github.com/JClerve/Modular-Payment'
+  },
+  dentalcare: {
+    title: 'DentalCare - Clinic Management Platform',
+    subtitle: 'Spring Boot 3, gRPC, Kafka, PostgreSQL, React, Tailwind CSS, Docker',
+    desc: 'Microservices-based healthcare platform for appointment booking, patient management, and clinic operations.',
+    highlights: [
+      'BFF architecture with gRPC communication for modularity and scalability',
+      'Kafka for event-driven, asynchronous processing across services',
+      'Containerized services with CI/CD pipelines for streamlined deployment'
+    ],
+    github: 'https://github.com/JClerve/DentalCare'
+  },
+  research: {
+    title: 'Dental Caries Detection in Mixed Dentition',
+    subtitle: 'Adapting Foundation Models Using Dual-View Co-Training',
+    desc: 'Dual-view AI framework for automated dental caries detection in pediatric mixed-dentition panoramic OPG images.',
+    highlights: [
+      'Global-View Screening with ResNet-50 FPN and Faster R-CNN for high-recall candidate regions',
+      'Local-View Tooth-Level Inspection with Mask R-CNN segmentation and lesion verification',
+      'DINOv2 foundation model features with SVM classification',
+      'Dual-view co-training combining global anatomical context with tooth-level detail'
     ],
     github: 'https://github.com/JClerve'
   },
-  aee: {
-    title: 'AI Engineer Essentials Bootcamp',
-    subtitle: 'Production Agentic Systems, LangGraph, Multi-Agent & GraphRAG',
-    desc: 'Comprehensive engineering portfolio of production-ready AI systems: context engineering, LangGraph stateful multi-agent workflows, evaluation harnesses, GraphRAG knowledge graphs, MCP integration pipelines, and LiveKit voice AI.',
+  zscore: {
+    title: 'Z-Score Prediction Web Application',
+    subtitle: 'Python, FastAPI, XGBoost, React, Vite, REST APIs',
+    desc: 'XGBoost regression model served through FastAPI with a React frontend.',
     highlights: [
-      'LangGraph multi-agent orchestration with conditional state routing',
-      'Knowledge Graph RAG (GraphRAG) for deep cross-document reasoning',
-      'MCP (Model Context Protocol) integration pipelines & tools',
-      'LiveKit voice AI integration with low-latency streaming STT/TTS'
+      'Low-latency predictions from an XGBoost model via FastAPI',
+      'Preprocessing and validation pipelines for structured input features',
+      'React frontend for data collection and user interaction'
     ],
-    github: 'https://github.com/JClerve'
-  },
-  dotnet: {
-    title: 'C# .NET Tetris Engine & Banx Suite',
-    subtitle: 'C#, .NET Core, Object-Oriented Architecture & Console Solutions',
-    desc: 'High-performance Tetris game engine and banking console solution built with clean C# architecture. Implements strict game-loop timing, collision detection matrices, and robust financial account transaction management.',
-    highlights: [
-      'Clean modular architecture with decoupled game loop and rendering',
-      'Rotation algorithms, piece wall-kicks, and matrix collision detection',
-      'Banx financial management engine with transactional integrity',
-      'ConsoleAppSolution demonstrating SOLID design patterns in C#'
-    ],
-    github: 'https://github.com/JClerve'
-  },
-  leetcode: {
-    title: 'LeetCode 365 - Algorithmic Mastery',
-    subtitle: '365 Days of Daily Algorithms & Data Structures in Python',
-    desc: 'Dedicated daily commitment tackling LeetCode problems ranging from Easy to Hard. Covers Hash Tables, Dynamic Programming, Graphs, Trees, Heaps, and Binary Search with optimized time and space complexity.',
-    highlights: [
-      'Over 100+ solved algorithmic challenges with documented time/space analysis',
-      'Implementations in Python with clean, readable, modular solutions',
-      'Deep exploration of 2-Pointer, Sliding Window, DFS/BFS, and Graph algorithms'
-    ],
-    github: 'https://github.com/JClerve'
-  },
-  python_math: {
-    title: 'Python Matrix & Computation Engine',
-    subtitle: 'Linear Algebra, Matrix Operations & Mathematical Utilities',
-    desc: 'Lightweight scientific math suite for matrix transformation, determinants, eigenvalues, and algorithmic mathematics implemented from scratch without bloated dependencies.',
-    highlights: [
-      'Matrix multiplication, inversion, and Gaussian elimination from first principles',
-      'Algorithmic optimization for numerical stability',
-      'Unit-tested mathematical operations and clean Pythonic API'
-    ],
-    github: 'https://github.com/JClerve'
+    github: 'https://github.com/JClerve/ML--Assignment'
   }
 };
 
