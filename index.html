@@ -309,20 +309,46 @@
 
   <script src="script.js"></script>
   <script>
-    function handleContactSubmit(e) {
+    async function handleContactSubmit(e) {
       e.preventDefault();
+      const form = e.target;
+      const button = form.querySelector('button[type="submit"]');
       const name = document.getElementById('contactName').value;
       const email = document.getElementById('contactEmail').value;
       const message = document.getElementById('contactMessage').value;
       const feedback = document.getElementById('contactFeedback');
+      const show = (text, color) => {
+        feedback.textContent = text;
+        feedback.style.display = 'block';
+        feedback.style.color = color;
+      };
 
-      const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
-      const body = encodeURIComponent(`From: ${name} (${email})\n\nMessage:\n${message}`);
-      window.location.href = `mailto:clervejoeson@gmail.com?subject=${subject}&body=${body}`;
-
-      feedback.textContent = `Thanks, ${name}! Your email client will open to send the message.`;
-      feedback.style.display = 'block';
-      feedback.style.color = '#2ecbbe';
+      button.disabled = true;
+      show('Sending...', 'inherit');
+      try {
+        // FormSubmit delivers the message to the inbox; no mail app needed on the visitor's side.
+        const res = await fetch('https://formsubmit.co/ajax/clervejoeson@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            name,
+            email,
+            message,
+            _subject: `Portfolio Inquiry from ${name}`,
+            _replyto: email,
+            _template: 'table',
+            _captcha: 'false'
+          })
+        });
+        const data = await res.json();
+        if (!res.ok || String(data.success) !== 'true') throw new Error(data.message || 'Send failed');
+        form.reset();
+        show(`Thanks, ${name}! Your message has been sent.`, '#2ecbbe');
+      } catch (err) {
+        show('Sorry, the message could not be sent. Please email clervejoeson@gmail.com directly.', '#e06c75');
+      } finally {
+        button.disabled = false;
+      }
     }
   </script>
 </body>
