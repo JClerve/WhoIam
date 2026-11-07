@@ -61,9 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // 4. Hero Canvas Animation - Non-Zero-Sum Connected Nodes & Mascot
   initHeroCanvas();
 
-  // 5. Game Theory Arcade Simulator (Prisoner's Dilemma)
-  initGameTheoryArcade();
-
   // 6. Project Modal Handlers
   initProjectModals();
 });
@@ -156,114 +153,6 @@ function initHeroCanvas() {
     requestAnimationFrame(draw);
   }
   draw();
-}
-
-/* --- Interactive Game Theory Simulator --- */
-function initGameTheoryArcade() {
-  const btnCooperate = document.getElementById('btnCooperate');
-  const btnDefect = document.getElementById('btnDefect');
-  const btnReset = document.getElementById('btnResetArcade');
-  const opponentSelect = document.getElementById('opponentStrategy');
-  const playerScoreElem = document.getElementById('playerScore');
-  const botScoreElem = document.getElementById('botScore');
-  const roundLog = document.getElementById('roundLog');
-
-  if (!btnCooperate) return;
-
-  let playerScore = 0;
-  let botScore = 0;
-  let round = 0;
-  let history = []; // array of { player, bot }
-  let grimTriggered = false;
-
-  function getBotMove(strategy) {
-    if (strategy === 'always_cooperate') return 'C';
-    if (strategy === 'always_defect') return 'D';
-    if (strategy === 'random') return Math.random() > 0.5 ? 'C' : 'D';
-    if (strategy === 'grim_trigger') {
-      if (grimTriggered) return 'D';
-      return 'C';
-    }
-    // Default: Tit-for-Tat
-    if (history.length === 0) return 'C';
-    return history[history.length - 1].player;
-  }
-
-  function playRound(playerMove) {
-    const strategy = opponentSelect ? opponentSelect.value : 'tit_for_tat';
-    const botMove = getBotMove(strategy);
-
-    if (playerMove === 'D') grimTriggered = true;
-
-    round++;
-    let pPoints = 0, bPoints = 0;
-    let outcomeText = '';
-    let cellId = '';
-
-    // Clear previous cell highlight
-    document.querySelectorAll('#payoffTable td').forEach(td => td.style.backgroundColor = '');
-
-    if (playerMove === 'C' && botMove === 'C') {
-      // Mutual cooperation (Win-Win)
-      pPoints = 3; bPoints = 3;
-      outcomeText = 'Win-Win! Mutual Cooperation (+3 each)';
-      cellId = 'cell-cc';
-    } else if (playerMove === 'C' && botMove === 'D') {
-      // Player sucker's payoff
-      pPoints = 0; bPoints = 5;
-      outcomeText = 'Exploited! Opponent defected (+0 vs +5)';
-      cellId = 'cell-cd';
-    } else if (playerMove === 'D' && botMove === 'C') {
-      // Player tempt
-      pPoints = 5; bPoints = 0;
-      outcomeText = 'Temptation! You defected (+5 vs +0)';
-      cellId = 'cell-dc';
-    } else {
-      // Mutual defection (Lose-Lose)
-      pPoints = 1; bPoints = 1;
-      outcomeText = 'Lose-Lose! Mutual defection (+1 each)';
-      cellId = 'cell-dd';
-    }
-
-    playerScore += pPoints;
-    botScore += bPoints;
-    history.push({ player: playerMove, bot: botMove });
-
-    if (playerScoreElem) playerScoreElem.textContent = playerScore;
-    if (botScoreElem) botScoreElem.textContent = botScore;
-
-    const highlightCell = document.getElementById(cellId);
-    if (highlightCell) {
-      highlightCell.style.backgroundColor = 'rgba(255, 255, 255, 0.35)';
-      setTimeout(() => {
-        highlightCell.style.backgroundColor = '';
-      }, 1200);
-    }
-
-    if (roundLog) {
-      const entry = document.createElement('div');
-      entry.style.fontSize = '0.9rem';
-      entry.style.margin = '4px 0';
-      entry.innerHTML = `<strong>R${round}:</strong> You [${playerMove}] - Bot [${botMove}] ➔ <em>${outcomeText}</em>`;
-      roundLog.prepend(entry);
-    }
-  }
-
-  btnCooperate.addEventListener('click', () => playRound('C'));
-  btnDefect.addEventListener('click', () => playRound('D'));
-
-  if (btnReset) {
-    btnReset.addEventListener('click', () => {
-      playerScore = 0;
-      botScore = 0;
-      round = 0;
-      history = [];
-      grimTriggered = false;
-      if (playerScoreElem) playerScoreElem.textContent = '0';
-      if (botScoreElem) botScoreElem.textContent = '0';
-      if (roundLog) roundLog.innerHTML = '<em>Make a move to start the tournament!</em>';
-    });
-  }
 }
 
 /* --- Project Modals --- */
