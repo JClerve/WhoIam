@@ -51,105 +51,75 @@
     <h3 style="font-size: 130%;">WHAT'S BUILT</h3>
     <p>Selected AI systems, backend platforms, and research work:</p>
 
-    <!-- 3-Column Labelled Grid (exact nonzerosum layout) -->
-    <div class="image-grid">
-      <!-- Enterprise RAG Assistant -->
-      <div class="labelled-col">
-        <h3>... GENERATIVE AI</h3>
+    <!-- Fanned card deck: drag, swipe, arrows or dots to browse; click the front card for details -->
+    <div class="card-deck" id="cardDeck" tabindex="0" aria-roledescription="carousel" aria-label="Projects">
+      <div class="deck-card card-violet">
         <div class="image-item">
-          <a href="#" data-project="rag">
+          <a href="#" data-project="rag" draggable="false">
             <span class="image-title">
               Enterprise RAG Assistant
               <div class="image-subtitle">AI knowledge retrieval system</div>
             </span>
-            <img src="images/mascot.png" alt="Enterprise RAG Assistant visual" />
-            <div class="tag-container">
-              <span class="tag">Python</span>
-              <span class="tag">LangChain</span>
-              <span class="tag">ChromaDB</span>
-              <span class="tag">FastAPI</span>
-            </div>
+            <img src="images/mascot.png" alt="Enterprise RAG Assistant visual" draggable="false" />
+            <div class="tag-container"><span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">ChromaDB</span><span class="tag">FastAPI</span></div>
           </a>
         </div>
       </div>
-
-      <!-- DemoPAY -->
-      <div class="labelled-col">
-        <h3>... C# .NET BACKEND</h3>
+      <div class="deck-card card-pink">
         <div class="image-item">
-          <a href="#" data-project="demopay">
+          <a href="#" data-project="demopay" draggable="false">
             <span class="image-title">
               DemoPAY
               <div class="image-subtitle">modular payment backend</div>
             </span>
-            <img src="images/game-theory.png" alt="DemoPAY visual" />
-            <div class="tag-container">
-              <span class="tag">.NET 10</span>
-              <span class="tag">PostgreSQL</span>
-              <span class="tag">Stripe</span>
-              <span class="tag">Docker</span>
-            </div>
+            <img src="images/game-theory.png" alt="DemoPAY visual" draggable="false" />
+            <div class="tag-container"><span class="tag">.NET 10</span><span class="tag">PostgreSQL</span><span class="tag">Stripe</span><span class="tag">Docker</span></div>
           </a>
         </div>
       </div>
-
-      <!-- DentalCare -->
-      <div class="labelled-col">
-        <h3>... MICROSERVICES</h3>
+      <div class="deck-card card-blue">
         <div class="image-item">
-          <a href="#" data-project="dentalcare">
+          <a href="#" data-project="dentalcare" draggable="false">
             <span class="image-title">
               DentalCare
               <div class="image-subtitle">healthcare &amp; dental clinic management platform</div>
             </span>
-            <img src="images/ai-systems.png" alt="DentalCare visual" />
-            <div class="tag-container">
-              <span class="tag">Spring Boot 3</span>
-              <span class="tag">gRPC</span>
-              <span class="tag">Kafka</span>
-              <span class="tag">React</span>
-            </div>
+            <img src="images/ai-systems.png" alt="DentalCare visual" draggable="false" />
+            <div class="tag-container"><span class="tag">Spring Boot 3</span><span class="tag">gRPC</span><span class="tag">Kafka</span><span class="tag">React</span></div>
+          </a>
+        </div>
+      </div>
+      <div class="deck-card card-peach">
+        <div class="image-item">
+          <a href="#" data-project="research" draggable="false">
+            <span class="image-title">
+              Dental Caries Detection
+              <div class="image-subtitle">research: foundation models &amp; dual-view co-training</div>
+            </span>
+            <img src="images/arcade.png" alt="Dental Caries Detection visual" draggable="false" />
+            <div class="tag-container"><span class="tag">DINOv2</span><span class="tag">Faster R-CNN</span><span class="tag">Mask R-CNN</span><span class="tag">SVM</span></div>
+          </a>
+        </div>
+      </div>
+      <div class="deck-card card-teal">
+        <div class="image-item">
+          <a href="#" data-project="zscore" draggable="false">
+            <span class="image-title">
+              Z-Score Prediction
+              <div class="image-subtitle">XGBoost regression served via FastAPI</div>
+            </span>
+            <img src="images/algorithms.png" alt="Z-Score Prediction visual" draggable="false" />
+            <div class="tag-container"><span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">FastAPI</span><span class="tag">React</span></div>
           </a>
         </div>
       </div>
     </div>
-
-    <!-- Secondary Row -->
-    <div class="image-grid" style="margin-top: 10px;">
-      <!-- Dental Caries Research -->
-      <div class="image-item">
-        <a href="#" data-project="research">
-          <span class="image-title">
-            Dental Caries Detection (Research)
-            <div class="image-subtitle">foundation models &amp; dual-view co-training</div>
-          </span>
-          <img src="images/arcade.png" alt="Dental caries research visual" />
-          <div class="tag-container">
-            <span class="tag">DINOv2</span>
-            <span class="tag">Faster R-CNN</span>
-            <span class="tag">Mask R-CNN</span>
-            <span class="tag">SVM</span>
-          </div>
-        </a>
-      </div>
-
-      <!-- Z-Score Prediction -->
-      <div class="image-item">
-        <a href="#" data-project="zscore">
-          <span class="image-title">
-            Z-Score Prediction Web App
-            <div class="image-subtitle">XGBoost regression served via FastAPI</div>
-          </span>
-          <img src="images/algorithms.png" alt="Z-Score prediction visual" />
-          <div class="tag-container">
-            <span class="tag">Python</span>
-            <span class="tag">XGBoost</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">React</span>
-          </div>
-        </a>
-      </div>
+    <div class="deck-controls">
+      <button type="button" class="deck-arrow" id="deckPrev" aria-label="Previous project">←</button>
+      <div class="deck-dots" id="deckDots"></div>
+      <button type="button" class="deck-arrow" id="deckNext" aria-label="Next project">→</button>
     </div>
+    <p class="deck-hint">drag the cards or use the arrows • click the front card for details</p>
   </section>
 
   <!-- Work Experience -->
