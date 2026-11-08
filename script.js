@@ -4,21 +4,8 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 2. Non-Zero-Sum Scroll Scale Effect (from nonzerosum.games)
-  window.addEventListener('scroll', () => {
-    const windowHeight = window.innerHeight;
-    const center = windowHeight / 2;
-
-    document.querySelectorAll('.image-item').forEach((item) => {
-      const bounds = item.getBoundingClientRect();
-      const itemCenter = bounds.top + bounds.height / 2;
-      const distanceToCenter = Math.abs(center - itemCenter);
-
-      // Smooth scale calculation based on distance to viewport center
-      const scale = Math.min(Math.max(0.94 + (1 - distanceToCenter / center) * 0.08, 0.94), 1.02);
-      item.style.transform = `scale(${scale})`;
-    });
-  });
+  // 2. Project card deck (drag / arrows / dots)
+  initCardDeck();
 
   // 3. Menu Peek / Breathing cycle (if not loaded via menu.html)
   (function initMenuBreathing() {
@@ -153,6 +140,85 @@ function initHeroCanvas() {
     requestAnimationFrame(draw);
   }
   draw();
+}
+
+/* --- Project Card Deck --- */
+function initCardDeck() {
+  const deck = document.getElementById('cardDeck');
+  if (!deck) return;
+  const cards = [...deck.querySelectorAll('.deck-card')];
+  const dots = document.getElementById('deckDots');
+  const n = cards.length;
+  let active = 0;
+
+  const dotButtons = cards.map((card, i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', `Show project ${i + 1}`);
+    b.addEventListener('click', () => go(i));
+    dots.appendChild(b);
+    return b;
+  });
+
+  function render() {
+    cards.forEach((card, i) => {
+      // shortest signed distance from the active card, wrapping around
+      let pos = ((i - active) % n + n) % n;
+      if (pos > n / 2) pos -= n;
+      card.dataset.pos = Math.max(-2, Math.min(2, pos));
+      card.setAttribute('aria-hidden', pos === 0 ? 'false' : 'true');
+      card.querySelector('a').tabIndex = pos === 0 ? 0 : -1;
+    });
+    dotButtons.forEach((b, i) => b.setAttribute('aria-current', i === active ? 'true' : 'false'));
+  }
+
+  function go(i) {
+    active = ((i % n) + n) % n;
+    render();
+  }
+
+  document.getElementById('deckPrev').addEventListener('click', () => go(active - 1));
+  document.getElementById('deckNext').addEventListener('click', () => go(active + 1));
+  deck.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') go(active - 1);
+    if (e.key === 'ArrowRight') go(active + 1);
+  });
+
+  // Drag / swipe: the front card follows the pointer, release past 60px to switch
+  let startX = 0, dx = 0, dragging = false, moved = false;
+  deck.addEventListener('pointerdown', (e) => {
+    if (e.button !== 0) return;
+    dragging = true; moved = false; startX = e.clientX; dx = 0;
+  });
+  window.addEventListener('pointermove', (e) => {
+    if (!dragging) return;
+    dx = e.clientX - startX;
+    if (Math.abs(dx) > 6 && !moved) { moved = true; deck.classList.add('dragging'); }
+    if (moved) {
+      const front = cards[active];
+      front.style.transform = `translateX(${dx}px) rotate(${dx / 25}deg)`;
+    }
+  });
+  window.addEventListener('pointerup', () => {
+    if (!dragging) return;
+    dragging = false;
+    deck.classList.remove('dragging');
+    cards[active].style.transform = '';
+    if (moved && Math.abs(dx) > 60) go(active + (dx < 0 ? 1 : -1));
+    setTimeout(() => { moved = false; }, 0); // after the trailing click has been swallowed
+  });
+
+  // Capture clicks: swallow the click that ends a drag; a side card comes to the front instead of opening
+  deck.addEventListener('click', (e) => {
+    const card = e.target.closest('.deck-card');
+    if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; return; }
+    if (card && card.dataset.pos !== '0') {
+      e.preventDefault(); e.stopPropagation();
+      go(cards.indexOf(card));
+    }
+  }, true);
+
+  render();
 }
 
 /* --- Project Modals --- */
