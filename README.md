@@ -41,16 +41,3 @@ Double-click `index.html` or open it with your browser:
 ```bash
 xdg-open index.html
 ```
-
-### Option 2: Run with Python Built-in Server
-```bash
-cd /home/joeson/art/Protfolio2
-python3 -m http.server 3000
-```
-Then visit `http://localhost:3000`.
-
-### Option 3: Run with Vite Dev Server
-```bash
-npm install
-npm run dev
-```
