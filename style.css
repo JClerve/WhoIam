@@ -646,6 +646,25 @@ footer {
   flex-wrap: wrap;
 }
 
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 14px 0;
+  flex-wrap: wrap;
+}
+
+.social-icons svg {
+  width: 36px;
+  height: 36px;
+  fill: currentColor;
+  transition: transform 0.2s;
+}
+
+.social-icons a:hover svg {
+  transform: scale(1.15);
+}
+
 /* --- Hero Animation Canvas / Container --- */
 .hero-canvas-wrap {
   width: 100%;
