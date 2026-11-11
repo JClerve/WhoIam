@@ -678,10 +678,12 @@ footer {
   box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
-canvas#heroCanvas {
+canvas#heroCanvas,
+.hero-photo {
   width: 100%;
   height: 100%;
   display: block;
+  object-fit: cover;
 }
 
 /* --- Modal for Project Details --- */
