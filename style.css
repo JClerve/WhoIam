@@ -42,6 +42,16 @@
   box-sizing: border-box;
 }
 
+/* Fanned deck cards poke past the edges; never let them cause sideways scroll */
+body {
+  overflow-x: hidden;
+}
+
+/* Side cards peek past the edges; clip them at the deck instead of widening the page */
+.card-deck {
+  overflow-x: clip;
+}
+
 body {
   word-wrap: break-word;
   font-size: 125%;
@@ -930,10 +940,12 @@ body.dark-mode .deck-card .tag {
 }
 
 @media (max-width: 699px) {
-  .card-deck { height: 420px; }
+  .card-deck { height: 420px; margin-left: -20px; margin-right: -20px; }
   .deck-card { width: 240px; height: 360px; margin-left: -120px; }
   .deck-card[data-pos="-1"] { --x: -95px; }
   .deck-card[data-pos="1"] { --x: 95px; }
+  .deck-card[data-pos="-2"] { --x: -95px; }
+  .deck-card[data-pos="2"] { --x: 95px; }
   .deck-card .image-title { font-size: 1.4rem; }
 }
 
