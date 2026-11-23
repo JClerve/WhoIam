@@ -34,10 +34,3 @@ A personal software engineer portfolio built with the exact fonts, theme, and to
    - `arcade.html` (Dedicated game theory lab)
    - `aboutme.html` (Dedicated personal engineering journey)
 
-## 🚀 Quick Start
-
-### Option 1: Open Directly in Any Browser
-Double-click `index.html` or open it with your browser:
-```bash
-xdg-open index.html
-```
